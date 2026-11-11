@@ -1,15 +1,20 @@
-print("=== Calculadora de Probabilidade ===")
+print("=== CALCULADORA DE PROBABILIDADE ===")
 
-casas_favoráveis = int(input("Digite o número de casas favoráveis: "))
-casas_possíveis = int(input("Digite o número de casas possíveis: "))
+try: casas_favoraveis = int(input("Digite o número de casos favoráveis: ")) casas_possiveis = int(input("Digite o número de casos possíveis: "))
 
-if casas_possíveis <= 0:
-    print("O número de casas possíveis deve ser maior que zero.")
-elif casas_favoráveis < 0 or casas_favoráveis > casas_possíveis:
-    print("Os casas favoráveis devem estar entre 0 e os casos possíveis.")
+if casas_possiveis <= 0:
+    print("Erro: O número de casos possíveis deve ser maior que zero.")
+
+elif casas_favoraveis < 0 or casas_favoraveis > casas_possiveis:
+    print("Erro: Os casos favoráveis devem estar entre 0 e o total de casos possíveis.")
+
 else:
-    probabilidade = casas_favoráveis / casas_possíveis
+    probabilidade = casas_favoraveis / casas_possiveis
     porcentagem = probabilidade * 100
 
-    print("A probabilidade é:", probabilidade)
-    print("A probabilidade em porcentagem é:", porcentagem, "%")
+    print("\n=== RESULTADO ===")
+    print(f"Probabilidade: {probabilidade:.4f}")
+    print(f"Porcentagem: {porcentagem:.2f}%")
+
+
+except ValueError: print("Erro: Digite apenas números inteiros.")
